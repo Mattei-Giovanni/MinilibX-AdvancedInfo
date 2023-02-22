@@ -1,0 +1,62 @@
+Functions in Minilibx Explained *Without Examples*
+
+/\         /\
+||~DISPLAY~||
+\/         \/
+
+mlx_init();
+  -Initializes a "display" which will contain windows, it returns a pointer to this "display" which will be needed for a lot of functions, its counterpart is mlx_destroy_display();
+  mlx_int_deal_shm();
+mlx_destroy_display(pointer to the display);
+  -Destroys the display, ***needs to do a free after the call of the function*** if not you will have some mem leaks
+
+/\        /\
+||~WINDOW~||
+\/        \/
+
+mlx_new_window(pointer to the display, window's width, window's height, windows's title (shown on the frame);
+  -Creates a new window and gives back a pointer to the created window, its counterpart is mlx_destroy_window();
+mlx_destroy_window(pointer to the display, pointer to the window);
+  -Destroys the window, ***needs its pointer to be set to null after the call of the function*** if not it gives you an error called BadDrawable
+  mlx_clear_window();
+  
+/\            /\
+||~PRACTICALS~||
+\/            \/
+
+mlx_loop(pointer to the display);
+  -Creates the loop in which you will be doing everything
+
+/\       /\
+||~IMAGE~||
+\/       \/
+
+mlx_new_image(pointer to the display, image's width, image's heigth);
+  -Creates an blank image and gives back a pointer to the created image
+mlx_get_data_addr(pointer to the image, number of bits per pixel, length of the line, endianess(It's not essential));
+
+/\       /\
+||~COLOR~||
+\/       \/
+
+mlx_get_color_value();
+
+/\       /\
+||~HOOKS~||
+\/       \/
+
+mlx_hook();
+mlx_loop_hook();
+mlx_key_hook();
+mlx_mouse_hook();
+mlx_expose_hook();
+  mlx_do_key_autorepeatoff();
+  mlx_do_key_autorepeaton();
+  mlx_do_sync();
+
+/\       /\
+||~DUNNO~||
+\/       \/
+
+mlx_ext_fullscreen();
+mlx_flush_event();
