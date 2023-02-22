@@ -45,8 +45,9 @@ mlx_get_color_value();
 ||~HOOKS~||
 \/       \/
 
-mlx_hook();
-mlx_loop_hook();
+mlx_hook(pointer to the window, id of the event, id of the mask, what you want the event to do, pointer to the struct containing all the data);
+  -Creates a "hook" that will simply do the function you gave when you trigger the event (watch out for the mask)
+mlx_loop_hook(pointer to the display, what you want the event to do, pointer to the struct containing all the data);
 mlx_key_hook();
 mlx_mouse_hook();
 mlx_expose_hook();
